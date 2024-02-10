@@ -1,0 +1,23 @@
+.row__post {
+    border: 1px solid black;
+    /* display: flex; */
+    height: 200px;
+    width: 200px;
+    object-fit: contain;
+}
+
+.row__posts {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: flex-start;
+    object-fit: contain;
+    overflow-x: scroll;
+}
+
+.bounding__box {
+    border: 1px solid red;
+}
+
+.row__button {
+    border-radius: 0.6%;
+}
