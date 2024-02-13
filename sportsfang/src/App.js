@@ -10,7 +10,6 @@ function App() {
   const [clickedRowTitle, setClickedRowTitle] = useState("");
   const [trailerUrl, setTrailerUrl] = useState("");
   const handleRowClick = (rowTitle, movieId) => {
-    console.log("handleRowClick: App.js movidId " + movieId)
     movieTrailer(null, {tmdbId: movieId})
     .then((url) => {
         // everything after the question mark

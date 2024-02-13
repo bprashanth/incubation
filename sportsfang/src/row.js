@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from './axios';
 import "./row.css";
-import YouTube from "react-youtube-test";
+import YouTube from "./youtube";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -16,17 +16,6 @@ function Row({ title, clickedRowTitle, handleRowClick, fetchUrl, trailerUrl, isL
         }
         fetchData();
     }, [fetchUrl]);
-
-    const opts = {
-        height: "390",
-        width: "100%",
-        playerVars: {
-            // there's a bug in autoplaying the video that causes a glitch.
-            autoplay: 1,
-            mute: 1,
-            loop: 1
-        },
-    };
 
     return (
         <div className="row">
@@ -44,7 +33,7 @@ function Row({ title, clickedRowTitle, handleRowClick, fetchUrl, trailerUrl, isL
                         alt={movie.name}/>;
                 })}
             </div>
-            {(clickedRowTitle === title) && <YouTube videoId={trailerUrl} opts={opts}/>}
+            {(clickedRowTitle === title) && <YouTube url={trailerUrl} height="390" width="100%"/>}
         </div>
     )
 }
