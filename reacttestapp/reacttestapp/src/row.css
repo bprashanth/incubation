@@ -13,11 +13,37 @@
     object-fit: contain;
     overflow-x: scroll;
 }
-
-.bounding__box {
-    border: 1px solid red;
+.row {
+    color: white;
+    margin-left: 20px;
 }
 
 .row__button {
     border-radius: 0.6%;
+}
+
+.row__poster {
+    /* this object-fit maintains aspect ration */
+    object-fit: contain;
+    width: 100%;
+    max-height: 100px;
+    margin-right: 10px;
+    /* transition when size changes  */
+    transition: transform 450ms;
+}
+
+.row__posters::-webkit-scrollbar {
+    /* shift and scroll without scrollbar */
+    display: none;
+}
+
+.row__posters {
+    /* what exactly does this flexbox do? it only works when max-height is set */
+    /* I think it turns columns to rows */
+    display: flex;
+    overflow-y: hidden;
+    /* this overflow allows a row scrollbar  */
+    overflow-x: scroll;
+    /* this padding prevents cropping of the row poster on hover  */
+    padding: 20px;
 }

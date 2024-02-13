@@ -10,7 +10,7 @@ function App() {
   const [clickedRowTitle, setClickedRowTitle] = useState("");
   const [trailerUrl, setTrailerUrl] = useState("");
   const handleRowClick = (rowTitle, movieId) => {
-    console.log("handleRowClick: App.js changing row clicked from " + clickedRowTitle + " to " + rowTitle)
+    console.log("handleRowClick: App.js movidId " + movieId)
     movieTrailer(null, {tmdbId: movieId})
     .then((url) => {
         // everything after the question mark
@@ -21,10 +21,7 @@ function App() {
   }
   return (
     <div className="app">
-      {/* Nav */}
-      {/* Banner */}
-      {/* <Nav/> */}
-      <Nav />
+      <Nav/>
       <Banner/>
       <Row title="NETFLIX ORIGINALS" clickedRowTitle={clickedRowTitle} handleRowClick={handleRowClick} fetchUrl={requests.fetchNetflixOriginals} trailerUrl={trailerUrl} isLargeRow/>
       <Row title="Trending Now" clickedRowTitle={clickedRowTitle} handleRowClick={handleRowClick} fetchUrl={requests.fetchTrending} trailerUrl={trailerUrl}/>

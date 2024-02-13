@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from './axios';
 import "./row.css";
-import YouTube from "react-youtube";
+import YouTube from "react-youtube-test";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
